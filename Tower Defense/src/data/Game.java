@@ -11,7 +11,11 @@ public class Game {
 
 	public Game(int[][] map){
 		grid = new TileGrid(map);
-		waveManager = new WaveManager(new Enemy(LoadTexture("UFO"), grid.getTile(10, 8), grid, 64, 64, 70, 25), 2, 2);
+		waveManager = new WaveManager(
+			new Enemy(LoadTexture("UFO"), grid.getTile(10, 8), grid, 64, 64, 70, 25),
+			new Enemy(LoadTexture("Ryan"), grid.getTile(10, 8), grid, 64, 64, 35, 9001), //It's over 9000!
+			2, 2
+		);
 		player = new Player(grid, waveManager);
 		
 		
